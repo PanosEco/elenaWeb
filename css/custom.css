@@ -216,6 +216,72 @@ body.menu-open {
   animation: morph 18s ease-in-out infinite;
 }
 
+.logo {
+  width: 76%;
+  height: auto;
+  animation: logoIn 1.5s 0.35s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.hero-frame {
+  position: absolute;
+  top: 5.4rem;
+  right: 1.05rem;
+  bottom: 1.05rem;
+  left: 1.05rem;
+  z-index: 1;
+  border: 1px solid rgba(168, 148, 104, 0.55);
+  pointer-events: none;
+}
+
+.branch {
+  position: absolute;
+  z-index: 2;
+  height: auto;
+  pointer-events: none;
+  user-select: none;
+}
+
+.branch-top {
+  top: -4%;
+  left: -11%;
+  width: min(27vw, 390px);
+  transform-origin: 8% 2%;
+  animation: branchIn 2.9s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@media (min-width: 1024px) {
+  .hero-grid {
+    padding-left: clamp(4rem, 11vw, 8.5rem);
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1200px) {
+  .hero-grid {
+    padding-left: clamp(5.5rem, 14vw, 8rem);
+  }
+
+  .branch-top {
+    left: -16%;
+    width: min(24vw, 280px);
+  }
+}
+
+.branch-bottom {
+  right: -7%;
+  bottom: -8%;
+  width: min(40vw, 480px);
+  transform-origin: 96% 94%;
+  animation: branchInBL 3.15s 0.28s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.branch-card {
+  right: -18%;
+  bottom: -22%;
+  width: min(62%, 250px);
+  transform-origin: 96% 94%;
+  animation: branchInBL 2.6s 0.4s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
 .tree {
   width: 88%;
   height: auto;
@@ -360,64 +426,6 @@ body.menu-open {
   gap: 1.75rem;
   padding: 0.85rem 0.875rem 0.85rem 1.75rem;
   white-space: nowrap;
-}
-
-.photo-slot {
-  position: relative;
-  overflow: hidden;
-  border-radius: 1.75rem;
-  background:
-    linear-gradient(165deg, rgba(255, 255, 255, 0.55), transparent 42%),
-    linear-gradient(145deg, #e4ebdd 0%, #f7f3eb 50%, #e7dcc6 100%);
-  box-shadow: inset 0 0 0 1px rgba(44, 58, 50, 0.08);
-}
-
-.photo-slot img {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0;
-}
-
-.photo-slot.has-image img {
-  opacity: 1;
-  transition: opacity 0.7s ease;
-}
-
-.photo-slot__empty {
-  position: absolute;
-  inset: 0.8rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 0.35rem;
-  border: 1px dashed rgba(111, 126, 94, 0.6);
-  border-radius: 1.15rem;
-  padding: 1rem;
-  text-align: center;
-}
-
-.photo-slot.has-image .photo-slot__empty {
-  opacity: 0;
-  visibility: hidden;
-}
-
-.photo-slot__leaf {
-  width: 34px;
-  height: 54px;
-  color: #6f7e5e;
-  transform-origin: 50% 100%;
-  animation: sway 6.5s ease-in-out infinite;
-}
-
-.photo-slot__num {
-  font-family: "Cormorant Garamond", Georgia, serif;
-  font-size: 1.35rem;
-  font-style: italic;
-  color: #6f7e5e;
 }
 
 .service-card {
@@ -817,6 +825,61 @@ button {
   }
 }
 
+@keyframes branchIn {
+  0% {
+    clip-path: inset(0 100% 100% 0);
+    opacity: 0;
+    transform: scale(0.72);
+  }
+  42% {
+    opacity: 1;
+  }
+  74% {
+    clip-path: inset(0);
+    transform: scale(1.045);
+  }
+  100% {
+    clip-path: inset(0);
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes branchInBL {
+  0% {
+    clip-path: inset(100% 0 0 100%);
+    opacity: 0;
+    transform: scale(0.72);
+  }
+  42% {
+    opacity: 1;
+  }
+  74% {
+    clip-path: inset(0);
+    transform: scale(1.045);
+  }
+  100% {
+    clip-path: inset(0);
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes logoIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.86);
+  }
+  70% {
+    opacity: 1;
+    transform: scale(1.035);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
 @keyframes floaty {
   0%,
   100% {
@@ -851,8 +914,33 @@ button {
     stroke-dashoffset: 0;
   }
 
-  .line-grow {
+  .line-grow,
+  .branch,
+  .logo {
+    opacity: 1;
+    clip-path: none;
     transform: none;
+  }
+}
+
+@media (max-width: 1023px) {
+  .branch-top {
+    top: -1.5rem;
+    left: -2.75rem;
+    width: 150px;
+  }
+
+  .branch-bottom {
+    right: -24%;
+    bottom: -10%;
+    width: 176px;
+  }
+
+  .hero-frame {
+    top: 4.6rem;
+    right: 0.55rem;
+    bottom: 0.55rem;
+    left: 0.55rem;
   }
 }
 

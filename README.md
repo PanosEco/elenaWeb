@@ -2,7 +2,7 @@
 
 Single-page site. HTML, a little CSS, a little JavaScript, and [Tailwind](https://tailwindcss.com/) from a CDN so colours and layout classes can be edited and refreshed without a build.
 
-The copy, phone, email, and address are placeholders. The photo frames stay empty until image files are added.
+The copy, phone, and email are placeholders.
 
 ## View it
 
@@ -19,16 +19,10 @@ Open `http://localhost:4173`. An internet connection is needed the first time so
 - **Colours and fonts** — `tailwind.config` in `index.html`.
 - **Words** — the text in `index.html`.
 - **Phone and email** — search for `69Χ` and `email@example.com`.
-- **Address and studies** — the dashed slots in the about and contact sections.
-- **Photos** — add files (or change the `src`):
-  - `images/portrait.jpg`
-  - `images/office.jpg`
-  - `images/detail-1.jpg`
-  - `images/detail-2.jpg`
+- **Landing branches** — `images/branch-top.png` (top-left corner) and `images/branch-bottom.png` (bottom-right). They grow out once when the page opens. The mark inside the dark shape is `images/logo.png`.
+- **Original files** — `images/originals/` keeps the uploads before background removal.
 
-  A frame fills itself when its file loads.
-
-Motion is in `css/custom.css` (tree drawing, floating leaves, scroll reveals, the side vine). Behaviour is in `js/main.js`.
+Motion is in `css/custom.css` (branch growth, the morphing shape, scroll reveals, the side vine). Behaviour is in `js/main.js`.
 
 The contact form checks the fields in the browser and then shows a thank-you state. It does not send email yet.
 

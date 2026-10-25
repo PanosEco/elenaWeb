@@ -134,18 +134,6 @@
     });
   });
 
-  document.querySelectorAll(".photo-slot img").forEach(function (img) {
-    function show() {
-      if (img.naturalWidth > 0) {
-        const slot = img.closest(".photo-slot");
-        if (slot) slot.classList.add("has-image");
-        if (img.dataset.alt) img.alt = img.dataset.alt;
-      }
-    }
-    img.addEventListener("load", show);
-    if (img.complete) show();
-  });
-
   const form = document.getElementById("contact-form");
   const success = document.getElementById("form-success");
   const status = document.getElementById("form-status");
