@@ -14,6 +14,8 @@ python3 -m http.server 4173
 
 Open `http://localhost:4173`. An internet connection is needed the first time so Tailwind and the fonts can load.
 
+A second, quieter version of the same text lives in `paper/`. Open `http://localhost:4173/paper/`. It keeps the paper bands, serif headlines and illustrated photo frames from the reference page, and uses the tree mark only in the footer. The botanical page at the root is unchanged. Name, phone, email, photos and the form address for that version are in `paper/site.js`.
+
 ## Customise
 
 - **Colours and fonts** — `tailwind.config` in `index.html`.
