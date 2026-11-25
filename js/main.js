@@ -155,11 +155,11 @@
     const lead = success.querySelector("[data-success-lead]");
     if (lead) {
       lead.textContent = name
-        ? name + ", το μήνυμα είναι έτοιμο σε αυτή τη σελίδα."
-        : "Το μήνυμα είναι έτοιμο σε αυτή τη σελίδα.";
+        ? name + ", το μήνυμα έμεινε σε αυτή τη σελίδα."
+        : "Το μήνυμα έμεινε σε αυτή τη σελίδα.";
     }
     if (status) {
-      status.textContent = "Το μήνυμα κρατήθηκε σε αυτή τη σελίδα. Δεν έχει σταλεί email.";
+      status.textContent = "Λειτουργία demo. Το μήνυμα δεν έχει σταλεί.";
     }
     const back = document.getElementById("reset-form");
     if (back) back.focus();

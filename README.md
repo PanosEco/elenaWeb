@@ -1,8 +1,8 @@
-# Ελένη Σακκά — ψυχολόγος
+# Online ψυχολογική υποστήριξη
 
 Single-page site. HTML, a little CSS, a little JavaScript, and [Tailwind](https://tailwindcss.com/) from a CDN so colours and layout classes can be edited and refreshed without a build.
 
-The copy, phone, and email are placeholders.
+The name, phone, and email are marked «ΝΑ ΠΡΟΣΤΕΘΕΙ».
 
 ## View it
 
@@ -18,7 +18,11 @@ Open `http://localhost:4173`. An internet connection is needed the first time so
 
 - **Colours and fonts** — `tailwind.config` in `index.html`.
 - **Words** — the text in `index.html`.
-- **Phone and email** — search for `69Χ` and `email@example.com`.
+- **Name, phone, and email** — search for `ΝΑ ΠΡΟΣΤΕΘΕΙ`.
+- **Photographs** — the dashed frames are placeholders. Replace a frame with an `img`, or drop a file in and point the frame at it:
+  - a wide photograph, labelled «αντικαταστήστε με φωτογραφία»
+  - a portrait, labelled «φωτογραφία ψυχολόγου»
+  - a photograph beside the online-session points
 - **Landing branches** — `images/branch-top.png` (top-left corner) and `images/branch-bottom.png` (bottom-right). They grow out once when the page opens. The mark inside the dark shape is `images/logo.png`.
 - **Original files** — `images/originals/` keeps the uploads before background removal.
 

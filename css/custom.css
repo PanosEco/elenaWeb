@@ -222,6 +222,55 @@ body.menu-open {
   animation: logoIn 1.5s 0.35s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
+.photo-placeholder {
+  display: flex;
+  min-height: 14rem;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  border: 1px dashed rgba(111, 126, 94, 0.7);
+  border-radius: 1.75rem;
+  background:
+    linear-gradient(165deg, rgba(255, 255, 255, 0.5), transparent 46%),
+    linear-gradient(145deg, #e4ebdd 0%, #f7f3eb 52%, #e7dcc6 100%);
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.photo-placeholder--portrait {
+  min-height: 22rem;
+  aspect-ratio: 4 / 5;
+}
+
+.photo-placeholder--wide {
+  min-height: 12rem;
+  aspect-ratio: 16 / 6;
+}
+
+.photo-placeholder--on-dark {
+  border-color: rgba(247, 243, 235, 0.4);
+  background: rgba(247, 243, 235, 0.06);
+  color: #f7f3eb;
+}
+
+.photo-placeholder__kicker {
+  font-size: 0.75rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.photo-placeholder__label {
+  max-width: 16rem;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 1.7rem;
+  line-height: 1.2;
+}
+
+.pending {
+  color: #a89468;
+}
+
 .hero-frame {
   position: absolute;
   top: 5.4rem;
