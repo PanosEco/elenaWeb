@@ -41,7 +41,7 @@
   window.addEventListener("resize", requestFrame);
   frame();
 
-  const revealables = document.querySelectorAll(".reveal, .line-grow");
+  const revealables = document.querySelectorAll(".reveal");
   if (!motionOK) {
     revealables.forEach(function (el) {
       el.classList.add("is-in");

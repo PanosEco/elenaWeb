@@ -331,26 +331,6 @@ body.menu-open {
   animation: branchInBL 2.6s 0.4s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
-.tree {
-  width: 88%;
-  height: auto;
-  overflow: visible;
-  color: #f4f0e6;
-}
-
-.leaf-cream {
-  color: #f3eee4;
-}
-
-.leaf-gold {
-  color: #d7c7a2;
-}
-
-.sprig {
-  pointer-events: none;
-  animation: floaty 12s ease-in-out infinite;
-}
-
 .sr-only {
   position: absolute;
   width: 1px;
@@ -361,27 +341,6 @@ body.menu-open {
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
   border: 0;
-}
-
-.draw {
-  stroke-dasharray: 1;
-  stroke-dashoffset: 1;
-  animation: draw 2.5s var(--d, 0.1s) ease forwards;
-}
-
-.leaf-in {
-  opacity: 0;
-  transform-box: fill-box;
-  transform-origin: center;
-  animation: leafIn 0.8s var(--d, 1.4s) cubic-bezier(0.22, 1, 0.36, 1) forwards;
-}
-
-.float-leaf {
-  animation: float var(--t, 12s) ease-in-out var(--delay, 0s) infinite;
-}
-
-.drift-leaf {
-  animation: drift 28s linear infinite;
 }
 
 .rule {
@@ -409,18 +368,6 @@ body.menu-open {
 .reveal.is-in {
   opacity: 1;
   transform: none;
-}
-
-.line-grow {
-  height: 1px;
-  transform: scaleX(0);
-  transform-origin: left center;
-  background: rgba(212, 198, 166, 0.9);
-  transition: transform 1.5s cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-.line-grow.is-in {
-  transform: scaleX(1);
 }
 
 .scroll-cue {
@@ -498,21 +445,6 @@ body.menu-open {
   place-items: center;
   border: 1px solid rgba(247, 243, 235, 0.45);
   border-radius: 999px;
-}
-
-.icon-ring--dashed {
-  border-style: dashed;
-}
-
-.card-link {
-  color: inherit;
-  text-decoration: underline;
-  text-decoration-color: rgba(196, 180, 138, 0.85);
-  text-underline-offset: 3px;
-}
-
-.card-link:hover {
-  text-decoration-color: #f7f3eb;
 }
 
 .inline-link {
@@ -602,8 +534,7 @@ body.menu-open {
 }
 
 .field input,
-.field textarea,
-.select-wrap select {
+.field textarea {
   width: 100%;
   border: 0;
   border-bottom: 1px solid rgba(44, 58, 50, 0.28);
@@ -647,8 +578,7 @@ body.menu-open {
 }
 
 .field input:focus,
-.field textarea:focus,
-.select-wrap select:focus {
+.field textarea:focus {
   outline: none;
   border-bottom-color: #2c3a32;
   box-shadow: 0 1px 0 var(--gold);
@@ -667,22 +597,6 @@ body.menu-open {
   color: var(--danger);
   font-size: 0.8rem;
   line-height: 1.35;
-}
-
-.select-wrap {
-  position: relative;
-}
-
-.select-wrap select {
-  appearance: none;
-  padding: 0.35rem 1.6rem 0.7rem 0;
-}
-
-.select-wrap svg {
-  position: absolute;
-  right: 0;
-  top: 0.35rem;
-  pointer-events: none;
 }
 
 .check {
@@ -780,23 +694,6 @@ button {
   cursor: pointer;
 }
 
-@keyframes draw {
-  to {
-    stroke-dashoffset: 0;
-  }
-}
-
-@keyframes leafIn {
-  from {
-    opacity: 0;
-    transform: scale(0.35);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
 @keyframes morph {
   0%,
   100% {
@@ -804,35 +701,6 @@ button {
   }
   50% {
     border-radius: 46% 54% 42% 58% / 56% 42% 58% 44%;
-  }
-}
-
-@keyframes float {
-  0%,
-  100% {
-    transform: translate3d(0, 0, 0) rotate(-7deg);
-  }
-  50% {
-    transform: translate3d(12px, -18px, 0) rotate(8deg);
-  }
-}
-
-@keyframes drift {
-  from {
-    transform: translate3d(-12vw, 0, 0) rotate(-8deg);
-  }
-  to {
-    transform: translate3d(108vw, -20px, 0) rotate(28deg);
-  }
-}
-
-@keyframes sway {
-  0%,
-  100% {
-    transform: rotate(-6deg);
-  }
-  50% {
-    transform: rotate(7deg);
   }
 }
 
@@ -929,16 +797,6 @@ button {
   }
 }
 
-@keyframes floaty {
-  0%,
-  100% {
-    transform: translateY(0) rotate(0deg);
-  }
-  50% {
-    transform: translateY(-8px) rotate(1.4deg);
-  }
-}
-
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto !important;
@@ -953,17 +811,11 @@ button {
   }
 
   .reveal,
-  .rise,
-  .leaf-in {
+  .rise {
     opacity: 1;
     transform: none;
   }
 
-  .draw {
-    stroke-dashoffset: 0;
-  }
-
-  .line-grow,
   .branch,
   .logo {
     opacity: 1;

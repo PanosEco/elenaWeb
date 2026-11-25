@@ -24,7 +24,6 @@ Open `http://localhost:4173`. An internet connection is needed the first time so
   - a portrait, labelled «φωτογραφία ψυχολόγου»
   - a photograph beside the online-session points
 - **Landing branches** — `images/branch-top.png` (top-left corner) and `images/branch-bottom.png` (bottom-right). They grow out once when the page opens. The mark inside the dark shape is `images/logo.png`.
-- **Original files** — `images/originals/` keeps the uploads before background removal.
 
 Motion is in `css/custom.css` (branch growth, the morphing shape, scroll reveals, the side vine). Behaviour is in `js/main.js`.
 
