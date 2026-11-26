@@ -864,6 +864,21 @@ button {
 }
 
 @media (max-width: 1023px) {
+  .progress {
+    z-index: 55;
+  }
+
+  #site-header {
+    z-index: 60;
+    background: #f7f3eb;
+    padding-top: max(0.75rem, env(safe-area-inset-top));
+  }
+
+  #mobile-menu:not([hidden]) {
+    z-index: 50;
+    padding-top: calc(6.25rem + env(safe-area-inset-top));
+  }
+
   .branch-top {
     top: -1.5rem;
     left: -2.75rem;
