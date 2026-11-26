@@ -15,6 +15,7 @@
 
 html {
   scroll-padding-top: 6.5rem;
+  overflow-x: clip;
 }
 
 body {
@@ -239,13 +240,18 @@ body.menu-open {
 }
 
 .photo-placeholder--portrait {
-  min-height: 22rem;
+  width: 100%;
+  max-width: 22rem;
+  min-width: 0;
+  min-height: 0;
   aspect-ratio: 4 / 5;
 }
 
 .photo-placeholder--wide {
-  min-height: 12rem;
-  aspect-ratio: 16 / 6;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 9rem;
 }
 
 .photo-placeholder--on-dark {
@@ -821,6 +827,39 @@ button {
     opacity: 1;
     clip-path: none;
     transform: none;
+  }
+}
+
+@media (min-width: 720px) {
+  .photo-placeholder--wide {
+    min-height: 0;
+    aspect-ratio: 16 / 6;
+  }
+}
+
+@media (max-width: 640px) {
+  .canopy {
+    width: min(72%, 250px);
+  }
+
+  .acc-button {
+    align-items: flex-start;
+    font-size: 1.2rem;
+  }
+
+  .leaf-marquee__group {
+    gap: 1.1rem;
+    padding-block: 0.6rem;
+    font-size: 1.05rem;
+  }
+
+  #mobile-menu a {
+    min-height: 3rem;
+  }
+
+  .to-top {
+    right: max(0.85rem, env(safe-area-inset-right));
+    bottom: max(0.85rem, env(safe-area-inset-bottom));
   }
 }
 

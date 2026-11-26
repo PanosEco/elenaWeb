@@ -56,6 +56,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: clip;
 }
 
 body {
@@ -270,8 +271,14 @@ section {
   list-style: none;
 }
 
+.nav-book {
+  display: none;
+}
+
 .nav-panel a {
-  display: block;
+  display: flex;
+  align-items: center;
+  min-height: 44px;
   border-radius: 999px;
   padding: 8px 12px;
   color: var(--ink);
@@ -731,6 +738,7 @@ details.q .ans {
   color: var(--ink);
   padding: 0.75em 0.95em;
   font: inherit;
+  font-size: 16px;
 }
 
 .field textarea {
@@ -936,6 +944,9 @@ dialog p {
 
   .nav-panel.open {
     display: block;
+    min-height: calc(100dvh - 5.25rem);
+    overflow: auto;
+    padding-bottom: 28px;
   }
 
   .nav-panel ul {
@@ -974,12 +985,96 @@ dialog p {
 }
 
 @media (max-width: 640px) {
+  h1 {
+    font-size: 2.05rem;
+  }
+
+  h2 {
+    font-size: 1.7rem;
+  }
+
   .header-book {
     display: none;
   }
 
+  .nav-book {
+    display: block;
+    margin-top: 8px;
+  }
+
+  .nav-book .btn {
+    width: 100%;
+    background: var(--btn-bg);
+    color: var(--btn-ink);
+  }
+
+  .header-row {
+    gap: 8px;
+  }
+
+  .brand {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+
+  .brand-text,
+  .brand-name {
+    min-width: 0;
+    overflow: hidden;
+  }
+
   .brand-role {
     display: none;
+  }
+
+  .brand-name .ph {
+    display: inline-block;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    vertical-align: bottom;
+  }
+
+  .hero {
+    padding-block: 18px 32px;
+  }
+
+  .hero-grid .photo,
+  .benefits-grid .photo,
+  .about-grid .photo {
+    aspect-ratio: 5 / 3;
+    max-width: none;
+  }
+
+  .band {
+    padding-block: 48px;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+  }
+
+  .benefit-list li,
+  details.q summary {
+    align-items: flex-start;
+  }
+
+  details.q summary {
+    font-size: 1.05rem;
+    padding-block: 16px;
+  }
+
+  details.q summary::after {
+    margin-top: 0.45rem;
+  }
+
+  .form-card .btn {
+    width: 100%;
   }
 
   .foot-intro {
@@ -989,6 +1084,19 @@ dialog p {
   .foot-seal {
     width: 58px;
     height: 58px;
+  }
+
+  .quote {
+    font-size: 1.4rem;
+  }
+
+  .photo-tag {
+    font-size: 0.68rem;
+    white-space: normal;
+  }
+
+  .prepub {
+    font-size: 0.84rem;
   }
 }
 
