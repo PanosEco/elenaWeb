@@ -319,4 +319,24 @@ function t(s) {
     saved = localStorage.getItem("paper-lang");
   } catch (error) {}
   if (saved === "en") applyLang("en");
+
+  var motionOK = !window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var revealables = document.querySelectorAll(
+    ".card, .benefit-list li, .about-copy p, .sec-head, .photo, .contact-info, .form-card"
+  );
+  if (!motionOK) return;
+  var seen = new IntersectionObserver(
+    function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("is-in", "reveal");
+        seen.unobserve(entry.target);
+      });
+    },
+    { threshold: 0.18, rootMargin: "0px 0px -8% 0px" }
+  );
+  revealables.forEach(function (el) {
+    el.classList.add("reveal");
+    seen.observe(el);
+  });
 })();

@@ -94,6 +94,10 @@ body {
   }
 }
 
+.nav-shell {
+  transition: background 0.4s ease, box-shadow 0.4s ease;
+}
+
 #site-header.is-scrolled .nav-shell {
   background: rgba(252, 249, 244, 0.94);
   box-shadow: 0 14px 40px -28px rgba(34, 44, 38, 0.55);
@@ -214,7 +218,7 @@ body.menu-open {
   background:
     radial-gradient(circle at 38% 32%, #44584a 0%, #2c3a32 52%, #24312a 100%);
   box-shadow: 0 34px 80px -36px rgba(28, 40, 32, 0.6);
-  animation: morph 18s ease-in-out infinite;
+  animation: morph 18s ease-in-out infinite, canopyFloat 9s ease-in-out infinite;
 }
 
 .logo {
@@ -437,10 +441,12 @@ body.menu-open {
     border-color 0.45s ease;
 }
 
-.service-card:hover {
-  transform: translateY(-6px);
-  border-color: rgba(44, 58, 50, 0.18);
-  box-shadow: 0 24px 50px -32px rgba(34, 44, 38, 0.45);
+@media (hover: hover) {
+  .service-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(44, 58, 50, 0.18);
+    box-shadow: 0 24px 50px -32px rgba(34, 44, 38, 0.45);
+  }
 }
 
 .icon-ring {
@@ -700,6 +706,16 @@ button {
   cursor: pointer;
 }
 
+@keyframes canopyFloat {
+  0%,
+  100% {
+    translate: 0 0;
+  }
+  50% {
+    translate: 0 -12px;
+  }
+}
+
 @keyframes morph {
   0%,
   100% {
@@ -834,6 +850,12 @@ button {
   .photo-placeholder--wide {
     min-height: 0;
     aspect-ratio: 16 / 6;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1023px) {
+  .canopy {
+    width: min(58%, 300px);
   }
 }
 
